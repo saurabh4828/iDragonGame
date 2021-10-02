@@ -16,7 +16,6 @@ if (annyang) {
   annyang.addCommands({
     
     'jump': function() { 
-        console.log("up is working");
         dino = document.querySelector('.dino');
         dino.classList.add('animateDino');
         setTimeout(() => {
@@ -38,9 +37,6 @@ if (annyang) {
         dino = document.querySelector('.dino');
         dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
         var w = parseInt(window.innerWidth || document.documentElement.clientWidth|| document.body.clientWidth );
-        console.log(w);
-        console.log("current position");
-        console.log(dinoX);
         if(dinoX <= w-300)
         {
             dino.style.left = dinoX + 100 + "px";
@@ -58,7 +54,6 @@ if (annyang) {
 // Experiment Over
 
 document.onkeydown = function (e) {
-    console.log("Key code is: ", e.keyCode)
     if (e.keyCode == 38) {
         dino = document.querySelector('.dino');
         dino.classList.add('animateDino');
@@ -70,9 +65,6 @@ document.onkeydown = function (e) {
         dino = document.querySelector('.dino');
         dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
         var w = parseInt(window.innerWidth || document.documentElement.clientWidth|| document.body.clientWidth );
-        console.log(w);
-        console.log("current position");
-        console.log(dinoX);
         if(dinoX <= w-300)
         {
             dino.style.left = dinoX + 100 + "px";
@@ -101,7 +93,6 @@ setInterval(() => {
 
     offsetX = Math.abs(dx - ox);
     offsetY = Math.abs(dy - oy);
-    // console.log(offsetX, offsetY)
     if (offsetX < 73 && offsetY < 52) {
         gameOver.innerHTML = "Game Over - Reload to Play Again"
         obstacle.classList.remove('obstacleAni')
@@ -122,7 +113,6 @@ setInterval(() => {
             aniDur = parseFloat(window.getComputedStyle(obstacle, null).getPropertyValue('animation-duration'));
             newDur = aniDur - 0.1;
             obstacle.style.animationDuration = newDur + 's';
-            console.log('New animation duration: ', newDur)
         }, 500);
 
     }
